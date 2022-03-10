@@ -31,9 +31,11 @@ const reportPost = (id) => {
     showPosts(remainingPosts);
 };
 
-const displayContent = (text) => {
-    return text.length < 30 ? 'text' : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
+let displayContent = (text) => {
+  
+    return text.length < 30 ? text : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
 };
+// console.log(text)
 
 const switchTab = (id) => {
     if (id === "posts") {
@@ -56,6 +58,7 @@ const switchTab = (id) => {
 };
 
 const createPost = (post) => {
+// console.log(post)
     const image = post.image;
     const div = document.createElement( "div" );
     div.classList.add( "post" );
